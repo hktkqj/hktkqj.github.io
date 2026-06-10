@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目 Alpha — 我的文档库</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <button class="menu-toggle" aria-label="切换侧边栏" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="logo"><a href="../../index.html">📚 我的文档库</a></div>
+  <nav>
+    <a href="../../index.html">首页</a>
+    <a href="../notes/index.html">笔记</a>
+    <a href="../guides/index.html">教程</a>
+    <a href="index.html">项目</a>
+  </nav>
+</header>
+
+<div class="site-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">目录</div>
+    <ul>
+      <li><a href="../../index.html">🏠 首页</a></li>
+    </ul>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📝 笔记</div>
+      <ul>
+        <li><a href="../notes/index.html">笔记目录</a></li>
+        <li><a href="../notes/markdown-guide.html">Markdown 指南</a></li>
+        <li><a href="../notes/git-cheatsheet.html">Git 速查表</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📖 教程</div>
+      <ul>
+        <li><a href="../guides/index.html">教程目录</a></li>
+        <li><a href="../guides/getting-started.html">快速开始</a></li>
+        <li><a href="../guides/how-to-add-docs.html">如何添加文档</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">🚀 项目</div>
+      <ul>
+        <li><a href="index.html">项目目录</a></li>
+        <li><a href="project-alpha.html">项目 Alpha</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="../../index.html">首页</a>
+        <span>›</span>
+        <a href="index.html">项目</a>
+        <span>›</span>
+        <span>项目 Alpha</span>
+      </div>
+      <h1>项目 Alpha</h1>
+      <div class="page-meta">
+        <span>🚀 项目</span>
+        <span class="tag">示例</span>
+        <span class="tag">静态网站</span>
+      </div>
+    </div>
+
+    <div class="toc-box">
+      <div class="toc-title">📋 本文目录</div>
+      <ol>
+        <li><a href="#intro">项目简介</a></li>
+        <li><a href="#features">主要功能</a></li>
+        <li><a href="#tech">技术栈</a></li>
+        <li><a href="#usage">使用说明</a></li>
+      </ol>
+    </div>
+
+    <div class="article-content">
+
+      <h2 id="intro">项目简介</h2>
+      <p>
+        项目 Alpha 是一个演示性质的个人文档分享网站，展示了如何使用纯 HTML 和 CSS 搭建一个结构清晰、易于维护的静态文档站点，并免费托管在 GitHub Pages 上。
+      </p>
+      <p>
+        本项目不依赖任何前端框架或构建工具，适合希望快速上线个人文档站点的用户。
+      </p>
+
+      <h2 id="features">主要功能</h2>
+      <ul>
+        <li>📋 主页文档目录，分类展示所有文档</li>
+        <li>🗂️ 侧边栏导航，支持多级分类</li>
+        <li>🔍 实时关键词过滤搜索</li>
+        <li>📱 响应式布局，适配手机和桌面</li>
+        <li>🏷️ 标签系统，标注文档属性</li>
+        <li>📝 面包屑导航，清晰展示当前位置</li>
+        <li>📖 文章内目录（TOC），方便长文档导航</li>
+      </ul>
+
+      <h2 id="tech">技术栈</h2>
+      <table>
+        <thead>
+          <tr><th>技术</th><th>用途</th><th>版本</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HTML5</td><td>页面结构</td><td>—</td></tr>
+          <tr><td>CSS3</td><td>样式与布局（Flexbox/Grid）</td><td>—</td></tr>
+          <tr><td>Vanilla JS</td><td>侧边栏交互、搜索过滤</td><td>ES5+</td></tr>
+          <tr><td>GitHub Pages</td><td>静态站点托管</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="usage">使用说明</h2>
+      <ol>
+        <li>Fork 或 Clone 仓库到本地。</li>
+        <li>按照<a href="../guides/how-to-add-docs.html">如何添加文档</a>教程添加自己的内容。</li>
+        <li>推送到 GitHub，在仓库 Settings 中启用 Pages 即可上线。</li>
+      </ol>
+
+      <blockquote>
+        完整的部署说明请参考<a href="../guides/getting-started.html">快速开始</a>文档。
+      </blockquote>
+
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 hktkqj · 使用纯 HTML / CSS 构建 · <a href="https://github.com/hktkqj/hktkqj.github.io">GitHub</a></p>
+</footer>
+
+<script src="../../js/docs.js"></script>
+</body>
+</html>

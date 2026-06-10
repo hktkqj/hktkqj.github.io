@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何添加文档 — 我的文档库</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <button class="menu-toggle" aria-label="切换侧边栏" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="logo"><a href="../../index.html">📚 我的文档库</a></div>
+  <nav>
+    <a href="../../index.html">首页</a>
+    <a href="../notes/index.html">笔记</a>
+    <a href="index.html">教程</a>
+    <a href="../projects/index.html">项目</a>
+  </nav>
+</header>
+
+<div class="site-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">目录</div>
+    <ul>
+      <li><a href="../../index.html">🏠 首页</a></li>
+    </ul>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📝 笔记</div>
+      <ul>
+        <li><a href="../notes/index.html">笔记目录</a></li>
+        <li><a href="../notes/markdown-guide.html">Markdown 指南</a></li>
+        <li><a href="../notes/git-cheatsheet.html">Git 速查表</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📖 教程</div>
+      <ul>
+        <li><a href="index.html">教程目录</a></li>
+        <li><a href="getting-started.html">快速开始</a></li>
+        <li><a href="how-to-add-docs.html">如何添加文档</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">🚀 项目</div>
+      <ul>
+        <li><a href="../projects/index.html">项目目录</a></li>
+        <li><a href="../projects/project-alpha.html">项目 Alpha</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="../../index.html">首页</a>
+        <span>›</span>
+        <a href="index.html">教程</a>
+        <span>›</span>
+        <span>如何添加文档</span>
+      </div>
+      <h1>如何添加文档</h1>
+      <div class="page-meta">
+        <span>📖 教程</span>
+        <span class="tag">贡献</span>
+      </div>
+    </div>
+
+    <div class="toc-box">
+      <div class="toc-title">📋 本文目录</div>
+      <ol>
+        <li><a href="#add-to-existing">向已有分类添加文档</a></li>
+        <li><a href="#new-category">新建文档分类</a></li>
+        <li><a href="#page-template">页面模板</a></li>
+        <li><a href="#update-sidebar">更新侧边栏与主页</a></li>
+      </ol>
+    </div>
+
+    <div class="article-content">
+
+      <h2 id="add-to-existing">向已有分类添加文档</h2>
+      <p>以向 <strong>笔记（notes）</strong> 分类添加一篇新文档为例：</p>
+      <ol>
+        <li>在 <code>docs/notes/</code> 目录下创建新的 HTML 文件，例如 <code>linux-commands.html</code>。</li>
+        <li>参考下方的<a href="#page-template">页面模板</a>填写内容。</li>
+        <li>在 <code>docs/notes/index.html</code> 的文档列表中添加对应链接。</li>
+        <li>在所有页面的侧边栏（<code>&lt;aside class="sidebar"&gt;</code>）中添加该链接。</li>
+        <li>在主页 <code>index.html</code> 的"最近更新"列表中添加该链接（可选）。</li>
+      </ol>
+
+      <h2 id="new-category">新建文档分类</h2>
+      <ol>
+        <li>在 <code>docs/</code> 下创建新文件夹，例如 <code>docs/tools/</code>。</li>
+        <li>在该文件夹中创建 <code>index.html</code> 作为该分类的目录页。</li>
+        <li>在主页 <code>index.html</code> 的分类卡片区域（<code>.category-grid</code>）添加新的分类卡片。</li>
+        <li>在所有页面的侧边栏中添加新分类的条目。</li>
+        <li>在顶部导航（<code>&lt;nav&gt;</code>）中添加链接（可选）。</li>
+      </ol>
+
+      <h2 id="page-template">页面模板</h2>
+      <p>新建文档时，复制以下模板并替换占位内容：</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;文档标题 — 我的文档库&lt;/title&gt;
+  &lt;link rel="stylesheet" href="../../css/style.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- 复制任意已有页面的 header 和 sidebar --&gt;
+
+&lt;main class="main-content"&gt;
+  &lt;div class="page-header"&gt;
+    &lt;div class="breadcrumb"&gt;
+      &lt;a href="../../index.html"&gt;首页&lt;/a&gt;
+      &lt;span&gt;›&lt;/span&gt;
+      &lt;a href="index.html"&gt;分类名&lt;/a&gt;
+      &lt;span&gt;›&lt;/span&gt;
+      &lt;span&gt;文档标题&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h1&gt;文档标题&lt;/h1&gt;
+    &lt;div class="page-meta"&gt;
+      &lt;span&gt;分类图标 分类名&lt;/span&gt;
+      &lt;span class="tag"&gt;标签&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="article-content"&gt;
+    &lt;p&gt;正文内容…&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;footer class="site-footer"&gt;
+  &lt;p&gt;© 2026 hktkqj · 使用纯 HTML / CSS 构建&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;script src="../../js/docs.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2 id="update-sidebar">更新侧边栏与主页</h2>
+      <p>每新增一篇文档，需要在以下位置更新链接：</p>
+
+      <table>
+        <thead>
+          <tr><th>文件</th><th>需要更新的位置</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>所有 HTML 页面</td><td>侧边栏 <code>&lt;aside class="sidebar"&gt;</code></td></tr>
+          <tr><td><code>index.html</code></td><td>最近更新列表 <code>.doc-list</code></td></tr>
+          <tr><td><code>index.html</code></td><td>分类卡片的文档数量 <code>.doc-count</code></td></tr>
+          <tr><td><code>docs/&lt;category&gt;/index.html</code></td><td>分类目录列表 <code>.doc-list</code></td></tr>
+        </tbody>
+      </table>
+
+      <blockquote>
+        <strong>提示：</strong>如果文档较多，可以将侧边栏抽取为一个独立文件，用服务端 include 或 JavaScript fetch 动态加载，避免重复维护。
+      </blockquote>
+
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 hktkqj · 使用纯 HTML / CSS 构建 · <a href="https://github.com/hktkqj/hktkqj.github.io">GitHub</a></p>
+</footer>
+
+<script src="../../js/docs.js"></script>
+</body>
+</html>
