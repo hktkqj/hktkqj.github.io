@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git 速查表 — 我的文档库</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <button class="menu-toggle" aria-label="切换侧边栏" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="logo"><a href="../../index.html">📚 我的文档库</a></div>
+  <nav>
+    <a href="../../index.html">首页</a>
+    <a href="index.html">笔记</a>
+    <a href="../guides/index.html">教程</a>
+    <a href="../projects/index.html">项目</a>
+  </nav>
+</header>
+
+<div class="site-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">目录</div>
+    <ul>
+      <li><a href="../../index.html">🏠 首页</a></li>
+    </ul>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📝 笔记</div>
+      <ul>
+        <li><a href="index.html">笔记目录</a></li>
+        <li><a href="markdown-guide.html">Markdown 指南</a></li>
+        <li><a href="git-cheatsheet.html">Git 速查表</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📖 教程</div>
+      <ul>
+        <li><a href="../guides/index.html">教程目录</a></li>
+        <li><a href="../guides/getting-started.html">快速开始</a></li>
+        <li><a href="../guides/how-to-add-docs.html">如何添加文档</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">🚀 项目</div>
+      <ul>
+        <li><a href="../projects/index.html">项目目录</a></li>
+        <li><a href="../projects/project-alpha.html">项目 Alpha</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="../../index.html">首页</a>
+        <span>›</span>
+        <a href="index.html">笔记</a>
+        <span>›</span>
+        <span>Git 速查表</span>
+      </div>
+      <h1>Git 速查表</h1>
+      <div class="page-meta">
+        <span>📝 笔记</span>
+        <span class="tag">Git</span>
+        <span class="tag">版本控制</span>
+      </div>
+    </div>
+
+    <div class="toc-box">
+      <div class="toc-title">📋 本文目录</div>
+      <ol>
+        <li><a href="#setup">初始配置</a></li>
+        <li><a href="#basics">基础操作</a></li>
+        <li><a href="#branch">分支管理</a></li>
+        <li><a href="#remote">远程操作</a></li>
+        <li><a href="#undo">撤销操作</a></li>
+      </ol>
+    </div>
+
+    <div class="article-content">
+
+      <h2 id="setup">初始配置</h2>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global core.editor "code --wait"</code></pre>
+
+      <h2 id="basics">基础操作</h2>
+      <table>
+        <thead>
+          <tr><th>命令</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>git init</code></td><td>在当前目录初始化仓库</td></tr>
+          <tr><td><code>git clone &lt;url&gt;</code></td><td>克隆远程仓库</td></tr>
+          <tr><td><code>git status</code></td><td>查看工作区状态</td></tr>
+          <tr><td><code>git add &lt;file&gt;</code></td><td>将文件添加到暂存区</td></tr>
+          <tr><td><code>git add .</code></td><td>添加所有修改到暂存区</td></tr>
+          <tr><td><code>git commit -m "msg"</code></td><td>提交暂存区的更改</td></tr>
+          <tr><td><code>git log --oneline</code></td><td>查看简洁提交历史</td></tr>
+          <tr><td><code>git diff</code></td><td>查看未暂存的修改</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="branch">分支管理</h2>
+      <pre><code># 列出所有本地分支
+git branch
+
+# 创建新分支
+git branch feature/my-feature
+
+# 切换分支
+git checkout feature/my-feature
+# 或使用新语法
+git switch feature/my-feature
+
+# 创建并切换
+git checkout -b feature/my-feature
+
+# 合并分支
+git merge feature/my-feature
+
+# 删除分支
+git branch -d feature/my-feature</code></pre>
+
+      <h2 id="remote">远程操作</h2>
+      <pre><code># 查看远程仓库
+git remote -v
+
+# 添加远程仓库
+git remote add origin https://github.com/user/repo.git
+
+# 拉取最新代码
+git pull origin main
+
+# 推送到远程
+git push origin main
+
+# 推送并设置上游
+git push -u origin main</code></pre>
+
+      <h2 id="undo">撤销操作</h2>
+      <pre><code># 撤销工作区修改（未暂存）
+git restore &lt;file&gt;
+
+# 撤销暂存（但保留工作区修改）
+git restore --staged &lt;file&gt;
+
+# 修改最后一次提交
+git commit --amend -m "新的提交信息"
+
+# 回退到某个提交（保留工作区）
+git reset --soft HEAD~1
+
+# 回退到某个提交（丢弃所有修改）
+git reset --hard HEAD~1</code></pre>
+
+      <blockquote>
+        <strong>⚠️ 注意：</strong><code>git reset --hard</code> 会丢失所有未提交的修改，请谨慎使用。
+      </blockquote>
+
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 hktkqj · 使用纯 HTML / CSS 构建 · <a href="https://github.com/hktkqj/hktkqj.github.io">GitHub</a></p>
+</footer>
+
+<script src="../../js/docs.js"></script>
+</body>
+</html>

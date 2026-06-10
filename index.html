@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的文档库</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <button class="menu-toggle" aria-label="切换侧边栏" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="logo"><a href="index.html">📚 我的文档库</a></div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="docs/notes/index.html">笔记</a>
+    <a href="docs/guides/index.html">教程</a>
+    <a href="docs/projects/index.html">项目</a>
+  </nav>
+</header>
+
+<div class="site-wrapper">
+
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-title">目录</div>
+    <ul>
+      <li><a href="index.html">🏠 首页</a></li>
+    </ul>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📝 笔记</div>
+      <ul>
+        <li><a href="docs/notes/index.html">笔记目录</a></li>
+        <li><a href="docs/notes/markdown-guide.html">Markdown 指南</a></li>
+        <li><a href="docs/notes/git-cheatsheet.html">Git 速查表</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">📖 教程</div>
+      <ul>
+        <li><a href="docs/guides/index.html">教程目录</a></li>
+        <li><a href="docs/guides/getting-started.html">快速开始</a></li>
+        <li><a href="docs/guides/how-to-add-docs.html">如何添加文档</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-category">
+      <div class="sidebar-category-title">🚀 项目</div>
+      <ul>
+        <li><a href="docs/projects/index.html">项目目录</a></li>
+        <li><a href="docs/projects/project-alpha.html">项目 Alpha</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <main class="main-content">
+
+    <section class="hero">
+      <h1>欢迎来到我的文档库 👋</h1>
+      <p>这里收录了我的学习笔记、使用教程和项目文档，按类别整理，方便查阅。</p>
+
+      <div class="search-bar">
+        <span class="search-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input type="search" placeholder="搜索文档…" aria-label="搜索文档" />
+      </div>
+    </section>
+
+    <h2 style="font-size:1.1rem;font-weight:700;color:var(--color-heading);margin-bottom:0.25rem;">文档分类</h2>
+    <p style="font-size:0.875rem;color:var(--color-text-muted);margin-bottom:0.5rem;">选择一个分类开始浏览</p>
+
+    <div class="category-grid">
+
+      <div class="category-card">
+        <div class="card-icon">📝</div>
+        <h2>笔记</h2>
+        <p>日常学习笔记、技术摘要与知识点整理。</p>
+        <span class="doc-count">2 篇文档</span>
+        <a class="card-link" href="docs/notes/index.html">浏览笔记 →</a>
+      </div>
+
+      <div class="category-card">
+        <div class="card-icon">📖</div>
+        <h2>教程</h2>
+        <p>步骤详细的操作教程，帮助快速上手各种工具与技术。</p>
+        <span class="doc-count">2 篇文档</span>
+        <a class="card-link" href="docs/guides/index.html">浏览教程 →</a>
+      </div>
+
+      <div class="category-card">
+        <div class="card-icon">🚀</div>
+        <h2>项目</h2>
+        <p>个人项目的设计说明、使用文档与开发记录。</p>
+        <span class="doc-count">1 篇文档</span>
+        <a class="card-link" href="docs/projects/index.html">浏览项目 →</a>
+      </div>
+
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--color-border);margin:2rem 0;" />
+
+    <h2 style="font-size:1.1rem;font-weight:700;color:var(--color-heading);margin-bottom:1rem;">最近更新</h2>
+    <ul class="doc-list">
+      <li>
+        <a href="docs/guides/how-to-add-docs.html">
+          <span class="doc-icon">📄</span>
+          <span class="doc-title">如何添加文档</span>
+          <span class="tag">教程</span>
+        </a>
+      </li>
+      <li>
+        <a href="docs/notes/markdown-guide.html">
+          <span class="doc-icon">📄</span>
+          <span class="doc-title">Markdown 指南</span>
+          <span class="tag">笔记</span>
+        </a>
+      </li>
+      <li>
+        <a href="docs/notes/git-cheatsheet.html">
+          <span class="doc-icon">📄</span>
+          <span class="doc-title">Git 速查表</span>
+          <span class="tag">笔记</span>
+        </a>
+      </li>
+      <li>
+        <a href="docs/guides/getting-started.html">
+          <span class="doc-icon">📄</span>
+          <span class="doc-title">快速开始</span>
+          <span class="tag">教程</span>
+        </a>
+      </li>
+      <li>
+        <a href="docs/projects/project-alpha.html">
+          <span class="doc-icon">📄</span>
+          <span class="doc-title">项目 Alpha</span>
+          <span class="tag">项目</span>
+        </a>
+      </li>
+    </ul>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 hktkqj · 使用纯 HTML / CSS 构建 · <a href="https://github.com/hktkqj/hktkqj.github.io">GitHub</a></p>
+</footer>
+
+<script src="js/docs.js"></script>
+</body>
+</html>
